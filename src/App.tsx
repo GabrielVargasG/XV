@@ -197,7 +197,7 @@ function App() {
         </div>
 
         <h1 style={{fontFamily: "DM Serif Text", fontSize: "3rem", fontWeight:200, color: "#a19599"}}>SUGERENCIAS DE REGALO</h1>
-        <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#a19599"}}>Tu presencia es el regalo más bello, pero si deseas hacerme un present 
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#a19599"}}>Tu presencia es el regalo más bello, pero si deseas hacerme un presente 
           agradezco sea la siguiente opción:
         </h1>
 

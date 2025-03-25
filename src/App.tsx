@@ -74,7 +74,7 @@ function App() {
         <h1 style={{fontFamily: "Dancing Script", fontSize: "3rem", color: "#eb7d88"}}>15 Años
         </h1>
         <div style={{ filter: "hue-rotate(-60deg)", position: "static" }}>
-          <img src={sparkles} alt="sparkles" style={{ width: "10rem", position: "relative", left:40 }} />
+          <img src={sparkles} alt="sparkles" style={{ width: "10rem", position: "relative", left:20 }} />
         </div>
         <h1 style={{fontFamily: "Rouge Script", fontSize: "7rem", fontWeight:500, color: "#eb7d88", marginBottom:-200}}>Diana</h1>
         <h1 style={{fontFamily: "Rouge Script", fontSize: "8rem", fontWeight:500, color: "#eb7d88", marginTop:-100}}>Romina</h1>
@@ -85,7 +85,7 @@ function App() {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center"}}>
-        <h1 style={{fontFamily: "Dancing Script", fontSize: "2.5rem", fontWeight:200, color: "#eb7d88", marginTop:160}}>Junto con mis padres</h1>
+        <h1 style={{fontFamily: "Dancing Script", fontSize: "2.5rem", fontWeight:200, color: "#eb7d88", marginTop:70}}>Junto con mis padres</h1>
         <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#a19599"}}>Azmin Viridiana Bisher Hernández</h1>
         <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#a19599", marginTop:-10}}>Lombardo García Rios</h1>
         <h1 style={{fontFamily: "Rouge Script", fontSize: "2.5rem", fontWeight:400, color: "#a19599"}}>y la presencia de mis madrinas:</h1>

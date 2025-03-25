@@ -74,12 +74,12 @@ function App() {
         <h1 style={{fontFamily: "Dancing Script", fontSize: "3rem", color: "#eb7d88"}}>15 Años
         </h1>
         <div style={{ filter: "hue-rotate(-60deg)", position: "static" }}>
-          <img src={sparkles} alt="sparkles" style={{ width: "10rem", position: "absolute", left:80 }} />
+          <img src={sparkles} alt="sparkles" style={{ width: "10rem", position: "relative", left:80 }} />
         </div>
         <h1 style={{fontFamily: "Rouge Script", fontSize: "7rem", fontWeight:500, color: "#eb7d88"}}>Diana</h1>
         <h1 style={{fontFamily: "Rouge Script", fontSize: "8rem", fontWeight:500, color: "#eb7d88", marginTop:-100}}>Romina</h1>
         <div style={{ filter: "hue-rotate(-60deg)", position: "static" }}>
-          <img src={sparkles} alt="sparkles" style={{ width: "10rem", position: "absolute", left:-250, top: -130 }} />
+          <img src={sparkles} alt="sparkles" style={{ width: "10rem", position: "relative", left:-250, top: -130 }} />
         </div>
         <div style={{ padding:10,display: "flex",
         flexDirection: "column",
@@ -180,6 +180,11 @@ function App() {
         <Countdown />
 
         <img src={itinerario} alt="itinerario" style={{width: "100%", marginTop:50}} />
+
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "5rem", fontWeight:500, color: "#a19599", display: "flex", flexDirection: "column", alignItems: "center"}}>
+          <span style={{fontFamily: "Dancing Script", fontSize: "4rem", fontWeight:500, color: "#eb7d88"}}>Favor de confirmar tu asistencia</span>
+        </h1>
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#a19599", marginTop:-50}}>Puedes hacerlo en el siguiente botón</h1>
       </div>
       </div>
       

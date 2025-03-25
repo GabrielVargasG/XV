@@ -1,6 +1,4 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import fondo from "./images/textura-patron-damasco_1268-4571.avif";
 import corona from "./images/corona.jpg";
 import sparkles from "./images/sparkles.webp";

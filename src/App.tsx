@@ -1,215 +1,128 @@
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
-import {
-  FaStar,
-  FaChurch,
-  FaUtensils,
-  FaMusic,
-  FaGlassCheers,
-  FaRegStar,
-} from "react-icons/fa";
-const globalStyles = document.createElement('style');
-globalStyles.innerHTML = `
-  body, html {
-    margin: 0;
-    padding: 0;
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import fondo from "./images/textura-patron-damasco_1268-4571.avif";
+import corona from "./images/corona.jpg";
+import sparkles from "./images/sparkles.webp";
+import itinerario from "./images/itinerario.png";
+import iglesia from "./images/iglesia.jpg";
+import { useEffect } from "react";
+const calculateTimeLeft = () => {
+  const eventDate = new Date("2025-04-12T00:00:00");
+  const now = new Date();
+  const difference = eventDate.getTime() - now.getTime();
+
+  let timeLeft = {
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  };
+
+  if (difference > 0) {
+    timeLeft = {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / 1000 / 60) % 60),
+      seconds: Math.floor((difference / 1000) % 60),
+    };
   }
-`;
-document.head.appendChild(globalStyles);
-import quince1 from "./images/quince1.jpeg";
-import quince2 from "./images/quince2.jpeg";
-import quince3 from "./images/quince3.jpeg";
 
-const images = [quince1, quince2, quince3];
+  return timeLeft;
+};
 
-const eventTimeline = [
-  { time: "8:00 PM", event: "Recepción de invitados", icon: <FaGlassCheers /> },
-  { time: "9:30 PM", event: "Vals", icon: <FaChurch /> },
-  { time: "9:00 PM", event: "Cena", icon: <FaUtensils /> },
-  { time: "Toda la noche", event: "Baile de la quinceañera", icon: <FaMusic /> },
-  { time: "1:00 AM", event: "Fin de la celebración", icon: <FaStar /> },
-];
+const Countdown = () => {
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
-export default function QuinceaneraInvitation() {
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <div
-      style={{
-        backgroundColor: "#ffc4db",
-        opacity: 0.8,
-        backgroundImage:
-          "repeating-linear-gradient(45deg, #ffbfd8 25%, transparent 25%, transparent 75%, #ffbfd8 75%, #ffbfd8), repeating-linear-gradient(45deg, #ffbfd8 25%, #ffc4db 25%, #ffc4db 75%, #ffbfd8 75%, #ffbfd8)",
-        backgroundPosition: "0 0, 10px 10px",
-        backgroundSize: "20px 20px",
-        color: "#212529",
-        width: "100%",
-        
-      }}
-    >
-        {/* <header
-          style={{
-            textAlign: "center",
-            padding: "1rem",
-            backgroundColor: "#dc3545",
-            color: "#fff",
-            fontSize: "1.25rem",
-            fontWeight: "bold",
-          }}
-        >
-          ¡Estás invitado a la Quinceañera de Valeria!
-        </header> */}
-
-      {/* Sección destacada con el nombre de la quinceañera */}
-      <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-      />
-      <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossOrigin="anonymous"
-      />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
-        rel="stylesheet"
-      />
-
-      <section
-        style={{
-          textAlign: "center",
-          position: "relative",
-        }}
-      >
-        <h1
-          style={{
-            fontFamily: "'Dancing Script', cursive",
-            fontSize: "3rem",
-            fontWeight: "bold",
-            color: "#dc3545",
-            textShadow: "0 0 10px #ff5d9b, 0 0 20px #ff5d9b",
-          }}
-        >
-          Valeria
-        </h1>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            gap: "1rem",
-            marginTop: "1rem",
-          }}
-        >
-          <FaRegStar style={{ color: "#ff5d9b", fontSize: "2rem" }} />
-          <FaRegStar style={{ color: "#ff5d9b", fontSize: "2.5rem" }} />
-          <FaRegStar style={{ color: "#ff5d9b", fontSize: "2rem" }} />
-        </div>
-      </section>
-
-      <section style={{ margin: "2rem auto", maxWidth: "800px" }}>
-        <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false}>
-          {images.map((src, index) => (
-            <div
-              key={index}
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                borderRadius: "2rem",
-              }}
-            >
-              <img
-                src={src}
-                alt={`Imagen ${index + 1}`}
-                style={{
-                  borderRadius: "2rem",
-                  maxWidth: "100%",
-                  height: "auto",
-                }}
-              />
-            </div>
-          ))}
-        </Carousel>
-      </section>
-
-      <section style={{ textAlign: "center", margin: "2rem 0" }}>
-        <h2
-          style={{
-            fontSize: "1.5rem",
-            fontWeight: "bold",
-            color: "#dc3545",
-          }}
-        >
-          Detalles del Evento
-        </h2>
-        <p style={{ marginTop: "1rem" }}>📅 Fecha: 20 de Octubre de 2025</p>
-        <p>📍 Lugar: Salón Elegante, Ciudad XYZ</p>
-      </section>
-      <section style={{ textAlign: "center", margin: "2rem 0" }}>
-        <h2
-          style={{
-            fontSize: "1.5rem",
-            fontWeight: "bold",
-            color: "#dc3545",
-          }}
-        >
-          Ceremonia Religiosa
-        </h2>
-        <p style={{ marginTop: "1rem" }}>
-          ⛪ Templo: Iglesia de San Judas Tadeo
-        </p>
-      </section>
-      <section
-        style={{ width: "100%", margin: "2rem auto", textAlign: "center" }}
-      >
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4266.167573407774!2d-109.4644012!3d27.0428886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86b81b84f837ffcd%3A0x228741631cea165d!2sIglesia%20de%20San%20Judas%20Tadeo!5e1!3m2!1ses-419!2smx!4v1742830855785!5m2!1ses-419!2smx"
-          width="600"
-          height="450"
-          style={{ border: 0, borderRadius: "10px" }}
-          loading="lazy"
-        ></iframe>
-      </section>
-      <section style={{ margin: "3rem auto", maxWidth: "800px" }}>
-        <h2
-          style={{
-            fontSize: "1.25rem",
-            fontWeight: "bold",
-            textAlign: "center",
-            color: "#dc3545",
-            marginBottom: "1rem",
-          }}
-        >
-          Itinerario
-        </h2>
-        <VerticalTimeline>
-          {eventTimeline.map((item, index) => (
-            <VerticalTimelineElement
-              key={index}
-              className="vertical-timeline-element--event"
-              date={item.time}
-              iconStyle={{ background: "#ff5d9b", color: "#fff" }}
-              icon={item.icon}
-            >
-              <h3 style={{ fontWeight: "bold" }}>{item.event}</h3>
-            </VerticalTimelineElement>
-          ))}
-        </VerticalTimeline>
-      </section>
-      <section
-        style={{ width: "100%", margin: "2rem auto", textAlign: "center" }}
-      >
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4264.724473193854!2d-109.44337460000001!3d27.0808315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86b81b3c1cd5ef6d%3A0xa60e5715884fb059!2sSALON%20MONTECARLO!5e1!3m2!1ses-419!2smx!4v1742830698093!5m2!1ses-419!2smx"
-          width="600"
-          height="450"
-          style={{ border: 0, borderRadius: "10px" }}
-          loading="lazy"
-        ></iframe>
-      </section>
+    <div style={{ textAlign: "center", marginTop: 50 }}>
+      <h1 style={{ fontFamily: "DM Serif Text", fontSize: "2rem", color: "#a19599" }}>
+        Solo faltan:
+      </h1>
+      <h1 style={{ fontFamily: "Dancing Script", fontSize: "3rem", color: "#eb7d88" }}>
+        {timeLeft.days} días, {timeLeft.hours} horas, {timeLeft.minutes} minutos, {timeLeft.seconds} segundos
+      </h1>
     </div>
   );
+};
+function App() {
+
+  return (
+    <>
+      <div
+      style={{
+        top: 0,
+        width: "100%",
+        height: "100%",
+        // backgroundColor: "#ffc4db",
+        backgroundImage: `url(${fondo})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        mixBlendMode: "multiply",
+            }}>
+        <img src={corona} alt="corona" style={{width: "10rem", mixBlendMode: "multiply", marginTop:50}} />
+        <h1 style={{fontFamily: "Dancing Script", fontSize: "3rem", color: "#eb7d88"}}>15 Años
+        </h1>
+        <div style={{ filter: "hue-rotate(-60deg)", position: "static" }}>
+          <img src={sparkles} alt="sparkles" style={{ width: "10rem", position: "absolute", left:80 }} />
+        </div>
+        <h1 style={{fontFamily: "Rouge Script", fontSize: "7rem", fontWeight:500, color: "#eb7d88"}}>Diana</h1>
+        <h1 style={{fontFamily: "Rouge Script", fontSize: "8rem", fontWeight:500, color: "#eb7d88", marginTop:-100}}>Romina</h1>
+        <div style={{ filter: "hue-rotate(-60deg)", position: "static" }}>
+          <img src={sparkles} alt="sparkles" style={{ width: "10rem", position: "absolute", left:-250, top: -130 }} />
+        </div>
+        <div style={{ padding:10,display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center"}}>
+        <h1 style={{fontFamily: "Dancing Script", fontSize: "2.5rem", fontWeight:200, color: "#eb7d88", marginTop:160}}>Junto con mis padres</h1>
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#a19599"}}>Azmin Viridiana Bisher Hernández</h1>
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#a19599", marginTop:-10}}>Lombardo García Rios</h1>
+        <h1 style={{fontFamily: "Rouge Script", fontSize: "2.5rem", fontWeight:400, color: "#a19599"}}>y la presencia de mis madrinas:</h1>
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#a19599"}}>Griselda Nataly Escalante Hernandez</h1>
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#a19599"}}>Diana Samirah Bisher Hernandez</h1>
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#a19599"}}>Idalia María Hernández Hernández</h1>
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#a19599"}}>Adriana García Rios</h1>
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#a19599"}}>Adeibe Adriana Bishet Hernandez</h1>
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#eb7d88"}}>FESTEJAMOS MI GRAN DIA</h1>
+        <img src={corona} alt="corona" style={{width: "10rem", mixBlendMode: "multiply", marginBottom:-90}} />
+        <h1 style={{fontFamily: "Rouge Script", fontSize: "7rem", fontWeight:500, color: "#eb7d88"}}>Diana</h1>
+        <h1 style={{fontFamily: "Rouge Script", fontSize: "9rem", fontWeight:500, color: "#eb7d88", marginTop:-100}}>Romina</h1>
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#a19599"}}>Tenemos el honor de invitarte a usted y su 
+          apresiable familia a la celebración de la Misa de Acción de gracias que con motivo de mis XV años se llevará el día</h1>
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "5rem", fontWeight:500, color: "#a19599", display: "flex", flexDirection: "column", alignItems: "center"}}>
+          <span style={{fontFamily: "Dancing Script", fontSize: "4rem", fontWeight:500, color: "#eb7d88"}}>Sábado </span>
+          12 <span style={{fontFamily: "Dancing Script", fontSize: "4rem", fontWeight:500, color: "#eb7d88"}}> Abril</span>
+        </h1>
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "5rem", fontWeight:500, color: "#a19599", marginTop:-20}}>2025</h1>
+
+        <img src={iglesia} alt="iglesia" style={{width: "50%", marginTop:50, mixBlendMode: "multiply" }} />
+
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "5rem", fontWeight:500, color: "#a19599", display: "flex", flexDirection: "column", alignItems: "center"}}>
+          <span style={{fontFamily: "Dancing Script", fontSize: "4rem", fontWeight:500, color: "#eb7d88"}}>Misa </span>
+        </h1>
+        <h1 style={{fontFamily: "Dancing Script", fontSize: "4rem", fontWeight:500, color: "#eb7d88", marginTop:-50}}>6:00 PM</h1>
+
+        <Countdown />
+
+        <img src={itinerario} alt="itinerario" style={{width: "100%", marginTop:50}} />
+      </div>
+      </div>
+      
+    </>
+  );
 }
+
+export default App;

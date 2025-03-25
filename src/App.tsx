@@ -79,7 +79,7 @@ function App() {
         <h1 style={{fontFamily: "Rouge Script", fontSize: "7rem", fontWeight:500, color: "#eb7d88", marginBottom:-200}}>Diana</h1>
         <h1 style={{fontFamily: "Rouge Script", fontSize: "8rem", fontWeight:500, color: "#eb7d88", marginTop:-100}}>Romina</h1>
         <div style={{ filter: "hue-rotate(-60deg)", position: "static" }}>
-          <img src={sparkles} alt="sparkles" style={{ width: "10rem", position: "relative", left:-250, top: -130 }} />
+          <img src={sparkles} alt="sparkles" style={{ width: "10rem", position: "relative", left:-200, top: -130 }} />
         </div>
         <div style={{ padding:10,display: "flex",
         flexDirection: "column",

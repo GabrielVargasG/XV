@@ -4,6 +4,9 @@ import corona from "./images/corona.jpg";
 import sparkles from "./images/sparkles.webp";
 import itinerario from "./images/itinerario.png";
 import iglesia from "./images/iglesia.jpg";
+import regalo from "./images/regalo.avif";
+import ropa from "./images/ropa.png";
+import phone from "./images/phone.png";
 import { useEffect } from "react";
 const calculateTimeLeft = () => {
   const eventDate = new Date("2025-04-12T00:00:00");
@@ -95,8 +98,8 @@ function App() {
         <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#a19599"}}>Idalia María Hernández Hernández</h1>
         <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#a19599"}}>Adriana García Rios</h1>
         <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#a19599"}}>Adeibe Adriana Bishet Hernandez</h1>
-        <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#eb7d88"}}>FESTEJAMOS MI GRAN DIA</h1>
-        <img src={corona} alt="corona" style={{width: "10rem", mixBlendMode: "multiply", marginBottom:-90}} />
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#eb7d88", marginTop:40}}>FESTEJAMOS MI GRAN DIA</h1>
+        <img src={corona} alt="corona" style={{width: "10rem", mixBlendMode: "multiply", marginBottom:-50}} />
         <h1 style={{fontFamily: "Rouge Script", fontSize: "7rem", fontWeight:500, color: "#eb7d88"}}>Diana</h1>
         <h1 style={{fontFamily: "Rouge Script", fontSize: "9rem", fontWeight:500, color: "#eb7d88", marginTop:-100}}>Romina</h1>
         <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#a19599"}}>Tenemos el honor de invitarte a usted y su 
@@ -182,8 +185,43 @@ function App() {
 
         <img src={itinerario} alt="itinerario" style={{width: "100%", marginTop:50}} />
 
+        
+        <div style={{ filter: "hue-rotate(-60deg)", position: "static", marginBottom:-120 }}>
+          <img src={sparkles} alt="sparkles" style={{ width: "5rem", position: "relative", left:250 }} />
+        </div>
         <h1 style={{fontFamily: "DM Serif Text", fontSize: "5rem", fontWeight:500, color: "#a19599", display: "flex", flexDirection: "column", alignItems: "center"}}>
-          <span style={{fontFamily: "Dancing Script", fontSize: "4rem", fontWeight:500, color: "#eb7d88"}}>Favor de confirmar tu asistencia</span>
+          <span style={{fontFamily: "Dancing Script", fontSize: "8rem", fontWeight:500, color: "#eb7d88"}}>Detalles</span>
+        </h1>
+        <div style={{ filter: "hue-rotate(-60deg)", position: "static", marginTop:-90}}>
+          <img src={sparkles} alt="sparkles" style={{ width: "5rem", position: "relative", left:-250 }} />
+        </div>
+
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "3rem", fontWeight:200, color: "#a19599"}}>SUGERENCIAS DE REGALO</h1>
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#a19599"}}>Tu presencia es el regalo más bello, pero si deseas hacerme un present 
+          agradezco sea la siguiente opción:
+        </h1>
+
+        <img src={regalo} alt="iglesia" style={{width: "50%", marginTop:50, mixBlendMode: "multiply",filter: "hue-rotate(-70deg)", }} />
+
+<h1 style={{fontFamily: "DM Serif Text", fontSize: "5rem", fontWeight:500, color: "#a19599", display: "flex", flexDirection: "column", alignItems: "center"}}>
+  <span style={{fontFamily: "Dancing Script", fontSize: "4rem", fontWeight:500, color: "#eb7d88"}}>Efectivo </span>
+</h1>
+<img src={ropa} alt="iglesia" style={{width: "40%", marginTop:50, mixBlendMode: "multiply",filter: "hue-rotate(10deg)", }} />
+
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "5rem", fontWeight:500, color: "#a19599", display: "flex", flexDirection: "column", alignItems: "center"}}>
+          <span style={{fontFamily: "Dancing Script", fontSize: "4rem", fontWeight:500, color: "#eb7d88"}}>Código de Vestimenta </span>
+        </h1>
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:500, color: "#a19599"}}>Ponte tu mejor Outfit para lucir fantástico</h1>
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "5rem", fontWeight:500, color: "#a19599", display: "flex", flexDirection: "column", alignItems: "center"}}>
+          <span style={{fontFamily: "Dancing Script", fontSize: "4rem", fontWeight:500, color: "#eb7d88"}}>Formal </span>
+        </h1>
+        <img src={phone} alt="iglesia" style={{width: "40%", marginTop:50, mixBlendMode: "multiply" }} />
+
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "5rem", fontWeight:500, color: "#a19599", display: "flex", flexDirection: "column", alignItems: "center"}}>
+          <span style={{fontFamily: "Dancing Script", fontSize: "4rem", fontWeight:500, color: "#eb7d88"}}>Confirmar asistencia </span>
+        </h1>
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "5rem", fontWeight:500, color: "#a19599", display: "flex", flexDirection: "column", alignItems: "center"}}>
+          <span style={{fontFamily: "DM Serif Text", fontSize: "4rem", fontWeight:500, color: "#a19599"}}>Favor de confirmar tu asistencia</span>
         </h1>
         <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#a19599", marginTop:-50}}>Puedes hacerlo en el siguiente botón</h1>
         <a
@@ -193,6 +231,7 @@ function App() {
           style={{
             textDecoration: "none",
             marginTop: 20,
+            marginBottom: 50,
           }}
         >
           <button

@@ -190,7 +190,7 @@ function App() {
           <img src={sparkles} alt="sparkles" style={{ width: "5rem", position: "relative", left:250 }} />
         </div>
         <h1 style={{fontFamily: "DM Serif Text", fontSize: "5rem", fontWeight:500, color: "#a19599", display: "flex", flexDirection: "column", alignItems: "center"}}>
-          <span style={{fontFamily: "Dancing Script", fontSize: "8rem", fontWeight:500, color: "#eb7d88"}}>Detalles</span>
+          <span style={{fontFamily: "Dancing Script", fontSize: "6rem", fontWeight:500, color: "#eb7d88"}}>Detalles</span>
         </h1>
         <div style={{ filter: "hue-rotate(-60deg)", position: "static", marginTop:-90}}>
           <img src={sparkles} alt="sparkles" style={{ width: "5rem", position: "relative", left:-250 }} />

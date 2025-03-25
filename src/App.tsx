@@ -112,6 +112,70 @@ function App() {
           <span style={{fontFamily: "Dancing Script", fontSize: "4rem", fontWeight:500, color: "#eb7d88"}}>Misa </span>
         </h1>
         <h1 style={{fontFamily: "Dancing Script", fontSize: "4rem", fontWeight:500, color: "#eb7d88", marginTop:-50}}>6:00 PM</h1>
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#a19599"}}>San Judas Tadeo</h1>
+        <a
+          href="https://maps.app.goo.gl/jEUJvD4WYSKArw2z7?g_st=com.google.maps.preview.copy"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            textDecoration: "none",
+            marginTop: 20,
+          }}
+        >
+          <button
+            style={{
+              backgroundColor: "#eb7d88",
+              color: "#fff",
+              fontFamily: "Dancing Script",
+              fontSize: "1.5rem",
+              padding: "10px 20px",
+              border: "none",
+              borderRadius: "10px",
+              cursor: "pointer",
+              boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+              transition: "transform 0.2s",
+            }}
+            onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
+            onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+          >
+            Ver ubicación
+          </button>
+        </a>
+
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "5rem", fontWeight:500, color: "#a19599", display: "flex", flexDirection: "column", alignItems: "center"}}>
+          <span style={{fontFamily: "Dancing Script", fontSize: "4rem", fontWeight:500, color: "#eb7d88"}}>Fietsa </span>
+        </h1>
+        <h1 style={{fontFamily: "Dancing Script", fontSize: "4rem", fontWeight:500, color: "#eb7d88", marginTop:-50}}>8:00 PM</h1>
+        <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#a19599"}}>Monte Carlo</h1>
+
+        <a
+          href="https://maps.app.goo.gl/si5xh8VnqnTuVvwP8?g_st=com.google.maps.preview.copy"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            textDecoration: "none",
+            marginTop: 20,
+          }}
+        >
+          <button
+            style={{
+              backgroundColor: "#eb7d88",
+              color: "#fff",
+              fontFamily: "Dancing Script",
+              fontSize: "1.5rem",
+              padding: "10px 20px",
+              border: "none",
+              borderRadius: "10px",
+              cursor: "pointer",
+              boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+              transition: "transform 0.2s",
+            }}
+            onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
+            onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+          >
+            Ver ubicación
+          </button>
+        </a>
 
         <Countdown />
 

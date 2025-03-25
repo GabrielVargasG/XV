@@ -74,7 +74,7 @@ function App() {
         <h1 style={{fontFamily: "Dancing Script", fontSize: "3rem", color: "#eb7d88"}}>15 Años
         </h1>
         <div style={{ filter: "hue-rotate(-60deg)", position: "static" }}>
-          <img src={sparkles} alt="sparkles" style={{ width: "10rem", position: "relative", left:80 }} />
+          <img src={sparkles} alt="sparkles" style={{ width: "10rem", position: "relative", left:40 }} />
         </div>
         <h1 style={{fontFamily: "Rouge Script", fontSize: "7rem", fontWeight:500, color: "#eb7d88", marginBottom:-200}}>Diana</h1>
         <h1 style={{fontFamily: "Rouge Script", fontSize: "8rem", fontWeight:500, color: "#eb7d88", marginTop:-100}}>Romina</h1>
@@ -185,6 +185,34 @@ function App() {
           <span style={{fontFamily: "Dancing Script", fontSize: "4rem", fontWeight:500, color: "#eb7d88"}}>Favor de confirmar tu asistencia</span>
         </h1>
         <h1 style={{fontFamily: "DM Serif Text", fontSize: "2rem", fontWeight:200, color: "#a19599", marginTop:-50}}>Puedes hacerlo en el siguiente botón</h1>
+        <a
+          href="https://w.app/hikadq"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            textDecoration: "none",
+            marginTop: 20,
+          }}
+        >
+          <button
+            style={{
+              backgroundColor: "#eb7d88",
+              color: "#fff",
+              fontFamily: "Dancing Script",
+              fontSize: "1.5rem",
+              padding: "10px 20px",
+              border: "none",
+              borderRadius: "10px",
+              cursor: "pointer",
+              boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+              transition: "transform 0.2s",
+            }}
+            onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
+            onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+          >
+            Confirmar asistencia
+          </button>
+        </a>
       </div>
       </div>
       
